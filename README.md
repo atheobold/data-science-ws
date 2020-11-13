@@ -1,12 +1,14 @@
 # Designing Data Science Workshops for Data-Intensive Environmental Science Research 
 
 [Allison Theobold](https://statistics.calpoly.edu/allison-theobold), California Polytechnic University -- San Luis Obispo
-[Stacey Hancock](https://math.montana.edu/directory/faculty/1941032/stacey-hancock), Montana State University
+
+[Stacey Hancock](https://math.montana.edu/directory/faculty/1941032/stacey-hancock), Montana State University 
+
 [Sara Mannheimer](http://www.lib.montana.edu/directory/1629171/sara-mannheimer), Montana State University
 
 To cite this article:  
 
-[Preprint of the paper]()
+[Preprint of the paper](https://github.com/atheobold/data-science-ws-jse/blob/master/paper/workshops.pdf)
 
 # Abstract 
 
