@@ -1,0 +1,257 @@
+---
+title: "Assessment of Workshops"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(lubridate)
+```
+
+# Data
+
+```{r}
+introR <- read_xlsx("introR_assessment_raw.xlsx", 
+                    sheet = 1)
+
+intermedR <- read_xlsx("intermediateR_assessment_raw.xlsx", 
+                       sheet = 1)
+
+wrangle <- read_xlsx("wrangle_assessment_raw.xlsx", 
+                     sheet = 1)
+
+viz <- read_xlsx("viz_assessment_raw.xlsx", 
+                 sheet = 1)
+
+```
+
+
+# Cleaning Column Names
+
+```{r}
+
+introR <- introR %>% 
+  rename(survey_time = Timestamp, 
+         identifier = `Please enter a unique identifier as follows: Number of pets (as numeric) + First two letters of your last name (lowercase) + First three letters of your current street (lowercase).  (e.g. I have no pets, my last name is Theobold, and I live on Beall Street, my unique identifier would be 0thbea)`,
+         pace = `How did you perceive the pace of the workshop?`, 
+         balance = `How was the balance of lecture to hands-on work?`,
+         instructor_answers = `The Instructor gave clear answers to your questions.`, 
+         instructor_considerate = `The Instructor was considerate.`, 
+         instructor_communicate = `The Instructor was a good communicator.`, 
+         instructor_enthusiasm = `The Instructor was enthusiastic.`, 
+         sufficient_helpers = `There were a sufficient number of helpers available to address any questions I might have.`, 
+         helpers_considerate = `The helpers were considerate.`, 
+         helpers_communicators = `The helpers were good communicators.`, 
+         helpers_enthusiasm = `The helpers were enthusiastic.`, 
+         atmosphere = `The overall atmosphere of the workshop was welcoming.`, 
+         time = `The amount of information covered at the workshop was reasonable for allotted time.`, 
+         new_material = `How much of the information presented at this workshop was new to you?`, 
+         use_research = `I learned skills that I will be able to use in my research/work.`, 
+         use_time = `How soon do you anticipate using the skills you learn at the workshop?`, 
+         recommend = `I would recommend this workshop to a friend/colleague.`, 
+         worth_time = `The workshop was worth my time.`) 
+
+
+intermedR <- intermedR %>% 
+  rename(survey_time = Timestamp, 
+         identifier = `Please enter a unique identifier as follows: Number of pets (as numeric) + First two letters of your last name (lowercase) + First three letters of your current street (lowercase).  (e.g. I have no pets, my last name is Theobold, and I live on Beall Street, my unique identifier would be 0thbea)`,
+         pace = `How did you perceive the pace of the workshop?`, 
+         balance = `How was the balance of lecture to hands-on work?`,
+         instructor_answers = `The Instructor gave clear answers to your questions.`, 
+         instructor_considerate = `The Instructor was considerate.`, 
+         instructor_communicate = `The Instructor was a good communicator.`, 
+         instructor_enthusiasm = `The Instructor was enthusiastic.`, 
+         sufficient_helpers = `There were a sufficient number of helpers available to address any questions I might have.`, 
+         helpers_considerate = `The helpers were considerate.`, 
+         helpers_communicators = `The helpers were good communicators.`, 
+         helpers_enthusiasm = `The helpers were enthusiastic.`, 
+         atmosphere = `The overall atmosphere of the workshop was welcoming.`, 
+         time = `The amount of information covered at the workshop was reasonable for allotted time.`, 
+         new_material = `How much of the information presented at this workshop was new to you?`, 
+         use_research = `I learned skills that I will be able to use in my research/work.`, 
+         use_time = `How soon do you anticipate using the skills you learn at the workshop?`, 
+         recommend = `I would recommend this workshop to a friend/colleague.`, 
+         worth_time = `The workshop was worth my time.`)
+
+
+wrangle <- wrangle %>% 
+  rename(survey_time = Timestamp, 
+         identifier = `Please enter a unique identifier as follows: Number of pets (as numeric) + First two letters of your last name (lowercase) + First three letters of your current street (lowercase).  (e.g. I have no pets, my last name is Theobold, and I live on Beall Street, my unique identifier would be 0thbea)`,
+         pace = `How did you perceive the pace of the workshop?`, 
+         balance = `How was the balance of lecture to hands-on work?`,
+         instructor_answers = `The Instructor gave clear answers to your questions.`, 
+         instructor_considerate = `The Instructor was considerate.`, 
+         instructor_communicate = `The Instructor was a good communicator.`, 
+         instructor_enthusiasm = `The Instructor was enthusiastic.`, 
+         sufficient_helpers = `There were a sufficient number of helpers available to address any questions I might have.`, 
+         helpers_considerate = `The helpers were considerate.`, 
+         helpers_communicators = `The helpers were good communicators.`, 
+         helpers_enthusiasm = `The helpers were enthusiastic.`, 
+         atmosphere = `The overall atmosphere of the workshop was welcoming.`, 
+         time = `The amount of information covered at the workshop was reasonable for allotted time.`, 
+         new_material = `How much of the information presented at this workshop was new to you?`, 
+         use_research = `I learned skills that I will be able to use in my research/work.`, 
+         use_time = `How soon do you anticipate using the skills you learn at the workshop?`, 
+         recommend = `I would recommend this workshop to a friend/colleague.`, 
+         worth_time = `The workshop was worth my time.`)
+
+
+viz <- viz %>% 
+  rename(survey_time = Timestamp, 
+         identifier = `Please enter a unique identifier as follows: Number of pets (as numeric) + First two letters of your last name (lowercase) + First three letters of your current street (lowercase).  (e.g. I have no pets, my last name is Theobold, and I live on Beall Street, my unique identifier would be 0thbea)`,
+         pace = `How did you perceive the pace of the workshop?`, 
+         balance = `How was the balance of lecture to hands-on work?`,
+         instructor_answers = `The Instructor gave clear answers to your questions.`, 
+         instructor_considerate = `The Instructor was considerate.`, 
+         instructor_communicate = `The Instructor was a good communicator.`, 
+         instructor_enthusiasm = `The Instructor was enthusiastic.`, 
+         sufficient_helpers = `There were a sufficient number of helpers available to address any questions I might have.`, 
+         helpers_considerate = `The helpers were considerate.`, 
+         helpers_communicators = `The helpers were good communicators.`, 
+         helpers_enthusiasm = `The helpers were enthusiastic.`, 
+         atmosphere = `The overall atmosphere of the workshop was welcoming.`, 
+         time = `The amount of information covered at the workshop was reasonable for allotted time.`, 
+         new_material = `How much of the information presented at this workshop was new to you?`, 
+         use_research = `I learned skills that I will be able to use in my research/work.`, 
+         use_time = `How soon do you anticipate using the skills you learn at the workshop?`, 
+         recommend = `I would recommend this workshop to a friend/colleague.`, 
+         worth_time = `The workshop was worth my time.`)
+
+
+```
+
+
+# Adding Workshop and Semester  
+
+```{r}
+introR <- introR %>% 
+  mutate(workshop = "Introduction to R", 
+         survey_time = ymd( 
+           word(
+             survey_time, 1)
+           ), 
+         semester = case_when(
+           year(survey_time) == 2019 & 
+             month(survey_time) %in% c(1, 2, 3, 4) ~  "spring 2019",
+           year(survey_time) == 2018 & 
+             month(survey_time) %in% c(8, 9, 10, 11) ~ "fall 2018"
+                              )
+        )
+
+
+intermedR <- intermedR %>% 
+  mutate(workshop = "Intermediate R", 
+         survey_time = ymd( 
+           word(
+             survey_time, 1)
+           ), 
+         semester = case_when(
+           year(survey_time) == 2019 & 
+             month(survey_time) %in% c(1, 2, 3, 4) ~  "spring 2019",
+           year(survey_time) == 2018 & 
+             month(survey_time) %in% c(8, 9, 10, 11) ~ "fall 2018"
+                              )
+        )
+
+
+wrangle <- wrangle %>% 
+  mutate(workshop = "Data Wrangling in R", 
+         survey_time = ymd( 
+           word(
+             survey_time, 1)
+           ), 
+         semester = case_when(
+           year(survey_time) == 2019 & 
+             month(survey_time) %in% c(1, 2, 3, 4) ~  "spring 2019",
+           year(survey_time) == 2018 & 
+             month(survey_time) %in% c(8, 9, 10, 11) ~ "fall 2018"
+                              )
+        )
+
+viz <- viz %>% 
+  mutate(workshop = "Data Visualization in R", 
+         survey_time = ymd( 
+           word(
+             survey_time, 1)
+           ), 
+         semester = case_when(
+           year(survey_time) == 2019 & 
+             month(survey_time) %in% c(1, 2, 3, 4) ~  "spring 2019",
+           year(survey_time) == 2018 & 
+             month(survey_time) %in% c(8, 9, 10, 11) ~ "fall 2018"
+                              )
+        )
+
+```
+
+
+# Merging Data 
+
+```{r}
+all_assess <- full_join(introR, 
+                        intermedR, 
+                        by = intersect(
+                          colnames(introR), 
+                          colnames(intermedR)
+                                      )
+                        ) %>% 
+              full_join(wrangle, 
+                        by = intersect(
+                        colnames(.), 
+                        colnames(wrangle)
+                                      )
+                        ) %>%
+              full_join(viz, 
+                        by = intersect(
+                        colnames(.), 
+                        colnames(viz)
+                                      )
+                        )
+```
+
+
+# Cleaning Identifiers 
+
+```{r}
+identifier_function <- function(x){
+  ifelse(
+    str_count(x) == 6, 
+    x, 
+    NA
+    )
+}
+
+all_assess <- all_assess %>% 
+  mutate(identifier = identifier_function(identifier))
+
+```
+
+# Cleaning Likert Responses
+
+```{r}
+likert <- function(x){
+  case_when(x == 5 ~ "strongly agree", 
+            x == 4 ~ "agree", 
+            x == 3 ~ "neither agree nor disagree", 
+            x == 2 ~ "disagree", 
+            x == 1 ~ "strongly disagree")
+}
+
+all_assess <- all_assess %>% 
+  mutate(atmosphere = likert(atmosphere), 
+         time = likert(time), 
+         recommend = likert(recommend), 
+         worth_time = likert(worth_time), 
+         use_research = likert(use_research)
+         )
+
+```
+
+
+# Writing Data
+
+```{r}
+write_csv(all_assess, path = "all_assess.csv")
+```
+

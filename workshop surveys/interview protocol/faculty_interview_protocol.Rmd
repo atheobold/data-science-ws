@@ -1,0 +1,26 @@
+---
+title: "Faculty Interview Protocol"
+author: "Allison Theobold, Stacey Hancock, Sara Mannheimer"
+date: "May 1, 2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+- What computational understandings and/or abilities do you believe are 
+necessary for practitioners in your field?  
+
+- What computational understandings and/or abilities do you expect that masters
+or doctoral graduates of your program will have? 
+
+- Of the courses required for completion of a masters or doctoral degree, which,
+if any, specifically teach computing?  
+
+- To the best of your understanding, what computational concepts and/or skills
+are taught in each of these courses?  
+
+- For the methods that are necessary for coursework and research that are not
+specifically taught, where do you believe students are acquiring these skills?  
+
+- What resources do you recommend to students who require support in building
+and applying computational skills? 

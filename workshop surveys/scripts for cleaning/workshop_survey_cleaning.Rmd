@@ -1,0 +1,549 @@
+---
+title: "Code for Analysis of Survey Data"
+author: "Allison Theobold, Stacey Hancock, & Sara Mannheimer"
+date: "December 15, 2019"
+output: pdf_document
+---
+# Set-up Options  
+
+```{r}
+library(tidyverse)
+library(forcats)
+library(lubridate)
+```
+
+# Read in Data  
+
+```{r data}
+introR <- read_csv("introR_survey_raw.csv")
+intermedR <- read_csv("intermediateR_survey_raw.csv")
+wrangle <- read_csv("wrangle_survey_raw.csv")
+viz <- read_csv("viz_survey_raw.csv")
+```
+
+
+# Cleaning Column Names
+
+```{r}
+
+introR <- introR %>% 
+  rename(survey_time = Timestamp, 
+         identifier = `Please enter a unique identifier as follows: Number of pets (as numeric) + First two letters of your last name (lowercase) + First three letters of your current street (lowercase).  (e.g. I have no pets, my last name is Theobold, and I live on Beall Street, my unique identifier would be 0thbea)`,
+         department = `Please indicate your relevant departmental affiliation. Check all that apply.`,
+         occupation = `Your current occupation at the university`, 
+         cs_course_count = `How many computer science courses (undergrad or grad) have you taken?`, 
+         cs_course_name = `What are your previous computer science experiences? List course names.`, 
+         cs_languages = `What programming languages do you have experience with? Check all that apply.`, 
+         stat_course_name = `What are your previous statistics experiences? List course names.`, 
+         other_programming_course = `What other courses have you taken that require computer programming (e.g. R, GIS, SPSS, STATA, SAS, MatLab, Mathematica, MARK, etc.)? List course names.`, 
+         operating_system = `What operating system is on the computer you are bringing to the workshop?`, 
+         research_experience = `Have you participated in independent or collaborative research outside the classroom?`, 
+         research_amount = `If so, how much? Check all that apply.`, 
+         data_collect_experience = `Do you have experience collecting your own data? Check all that apply.`, 
+         data_storage = `If you have collected your own data, how did you choose to store it? Check all that apply.`, 
+         reason_attend = `What is your most important reason for attending this workshop? Check all that apply.`, 
+         resources_used = `What resources have you used while learning to program in R? Check all that apply.`, 
+         hope_learn = `In a few words, what do you hope to learn from this workshop?`
+         ) 
+
+
+intermedR <- intermedR %>% 
+  rename(survey_time = Timestamp, 
+         identifier = `Please enter a unique identifier as follows: Number of pets (as numeric) + First two letters of your last name (lowercase) + First three letters of your current street (lowercase).  (e.g. I have no pets, my last name is Theobold, and I live on Beall Street, my unique identifier would be 0thbea)`,
+         department = `Please indicate your relevant departmental affiliation. Check all that apply.`,
+         occupation = `Your current occupation at the university`, 
+         cs_course_count = `How many computer science courses (undergrad or grad) have you taken?`, 
+         cs_course_name = `What are your previous computer science experiences? List course names.`, 
+         cs_languages = `What programming languages do you have experience with? Check all that apply.`, 
+         stat_course_name = `What are your previous statistics experiences? List course names.`, 
+         other_programming_course = `What other courses have you taken that require computer programming (e.g. R, GIS, SPSS, STATA, SAS, MatLab, Mathematica, MARK, etc.)? List course names.`, 
+         operating_system = `What operating system is on the computer you are bringing to the workshop?`, 
+         research_experience = `Have you participated in independent or collaborative research outside the classroom?`, 
+         research_amount = `If so, how much? Check all that apply.`, 
+         data_collect_experience = `Do you have experience collecting your own data? Check all that apply.`, 
+         data_storage = `If you have collected your own data, how did you choose to store it? Check all that apply.`, 
+         reason_attend = `What is your most important reason for attending this workshop? Check all that apply.`, 
+         resources_used = `What resources have you used while learning to program in R? Check all that apply.`, 
+         hope_learn = `In a few words, what do you hope to learn from this workshop?`
+         )
+
+
+wrangle <- wrangle %>% 
+  rename(survey_time = Timestamp, 
+         identifier = `Please enter a unique identifier as follows: Number of pets (as numeric) + First two letters of your last name (lowercase) + First three letters of your current street (lowercase).  (e.g. I have no pets, my last name is Theobold, and I live on Beall Street, my unique identifier would be 0thbea)`,
+         department = `Please indicate your relevant departmental affiliation. Check all that apply.`,
+         occupation = `Your current occupation at the university`, 
+         cs_course_count = `How many computer science courses (undergrad or grad) have you taken?`, 
+         cs_course_name = `What are your previous computer science experiences? List course names.`, 
+         cs_languages = `What programming languages do you have experience with? Check all that apply.`, 
+         stat_course_name = `What are your previous statistics experiences? List course names.`, 
+         other_programming_course = `What other courses have you taken that require computer programming (e.g. R, GIS, SPSS, STATA, SAS, MatLab, Mathematica, MARK, etc.)? List course names.`, 
+         operating_system = `What operating system is on the computer you are bringing to the workshop?`, 
+         research_experience = `Have you participated in independent or collaborative research outside the classroom?`, 
+         research_amount = `If so, how much? Check all that apply.`, 
+         data_collect_experience = `Do you have experience collecting your own data? Check all that apply.`, 
+         data_storage = `If you have collected your own data, how did you choose to store it? Check all that apply.`, 
+         reason_attend = `What is your most important reason for attending this workshop? Check all that apply.`, 
+         resources_used = `What resources have you used while learning to program in R? Check all that apply.`, 
+         hope_learn = `In a few words, what do you hope to learn from this workshop?`
+         )
+
+
+viz <- viz %>% 
+  rename(survey_time = Timestamp, 
+         identifier = `Please enter a unique identifier as follows: Number of pets (as numeric) + First two letters of your last name (lowercase) + First three letters of your current street (lowercase).  (e.g. I have no pets, my last name is Theobold, and I live on Beall Street, my unique identifier would be 0thbea)`,
+         department = `Please indicate your relevant departmental affiliation. Check all that apply.`,
+         occupation = `Your current occupation at the university`, 
+         cs_course_count = `How many computer science courses (undergrad or grad) have you taken?`, 
+         cs_course_name = `What are your previous computer science experiences? List course names.`, 
+         cs_languages = `What programming languages do you have experience with? Check all that apply.`, 
+         stat_course_name = `What are your previous statistics experiences? List course names.`, 
+         other_programming_course = `What other courses have you taken that require computer programming (e.g. R, GIS, SPSS, STATA, SAS, MatLab, Mathematica, MARK, etc.)? List course names.`, 
+         operating_system = `What operating system is on the computer you are bringing to the workshop?`, 
+         research_experience = `Have you participated in independent or collaborative research outside the classroom?`, 
+         research_amount = `If so, how much? Check all that apply.`, 
+         data_collect_experience = `Do you have experience collecting your own data? Check all that apply.`, 
+         data_storage = `If you have collected your own data, how did you choose to store it? Check all that apply.`, 
+         reason_attend = `What is your most important reason for attending this workshop? Check all that apply.`, 
+         resources_used = `What resources have you used while learning to program in R? Check all that apply.`, 
+         hope_learn = `In a few words, what do you hope to learn from this workshop?`
+         )
+
+
+```
+
+
+# Adding Workshop and Semester  
+
+```{r}
+introR <- introR %>% 
+  mutate(workshop = "Introduction to R", 
+         survey_time = ymd( 
+           word(
+             survey_time, 1)
+           ), 
+         semester = case_when(
+           year(survey_time) == 2019 & 
+             month(survey_time) %in% c(1, 2, 3, 4) ~  "spring 2019",
+           year(survey_time) == 2018 & 
+             month(survey_time) %in% c(8, 9, 10, 11) ~ "fall 2018"
+                              )
+        )
+
+
+intermedR <- intermedR %>% 
+  mutate(workshop = "Intermediate R", 
+         survey_time = ymd( 
+           word(
+             survey_time, 1)
+           ), 
+         semester = case_when(
+           year(survey_time) == 2019 & 
+             month(survey_time) %in% c(1, 2, 3, 4) ~  "spring 2019",
+           year(survey_time) == 2018 & 
+             month(survey_time) %in% c(8, 9, 10, 11) ~ "fall 2018"
+                              )
+        )
+
+
+wrangle <- wrangle %>% 
+  mutate(workshop = "Data Wrangling in R", 
+         survey_time = ymd( 
+           word(
+             survey_time, 1)
+           ), 
+         semester = case_when(
+           year(survey_time) == 2019 & 
+             month(survey_time) %in% c(1, 2, 3, 4) ~  "spring 2019",
+           year(survey_time) == 2018 & 
+             month(survey_time) %in% c(8, 9, 10, 11) ~ "fall 2018"
+                              )
+        )
+
+viz <- viz %>% 
+  mutate(workshop = "Data Visualization in R", 
+         survey_time = ymd( 
+           word(
+             survey_time, 1)
+           ), 
+         semester = case_when(
+           year(survey_time) == 2019 & 
+             month(survey_time) %in% c(1, 2, 3, 4) ~  "spring 2019",
+           year(survey_time) == 2018 & 
+             month(survey_time) %in% c(8, 9, 10, 11) ~ "fall 2018"
+                              )
+        )
+
+```
+
+
+# Merging Data 
+
+```{r}
+all_survey <- full_join(introR, 
+                        intermedR, 
+                        by = intersect(
+                          colnames(introR), 
+                          colnames(intermedR)
+                                      )
+                        ) %>% 
+              full_join(wrangle, 
+                        by = intersect(
+                        colnames(.), 
+                        colnames(wrangle)
+                                      )
+                        ) %>%
+              full_join(viz, 
+                        by = intersect(
+                        colnames(.), 
+                        colnames(viz)
+                                      )
+                        )
+```
+
+
+# Cleaning Identifiers 
+
+```{r}
+identifier_function <- function(x){
+  ifelse(
+    str_count(x) == 6, 
+    x, 
+    NA
+    )
+}
+
+introR <- introR %>% 
+  mutate(identifier = identifier_function(identifier))
+
+intermedR <- intermedR %>% 
+  mutate(identifier = identifier_function(identifier))
+
+wrangle <- wrangle %>% 
+  mutate(identifier = identifier_function(identifier))
+
+viz <- viz %>% 
+  mutate(identifier = identifier_function(identifier))
+
+```
+
+
+# Cleaning Occupations 
+
+```{r occupation}
+all_survey <- all_survey %>% 
+  mutate(occupation = case_when(grepl('I am a faculty member', occupation) ~ 
+                              "Faculty", 
+                            grepl('Post', occupation) ~ 
+                              "Post-Doctorate",
+                            grepl('I am a staff member', occupation) ~ 
+                              "Staff",
+                            grepl('Staff Member', occupation) ~ 
+                              "Staff",
+                            TRUE ~ occupation)) %>% 
+  mutate(occupation = fct_explicit_na(occupation))
+```
+
+
+# Cleaning Departments 
+
+```{r dept}
+all_survey <- all_survey %>% 
+  mutate(department = case_when(
+    grepl('Faculty|Staff|Post', department) ~ 
+      "NA", 
+    grepl('Animal', department) ~
+      "Animal & Range Sciences",
+    grepl('[Aa]gricult', department) ~ 
+      "Agriculture",
+    grepl('[Ee]ngineering', department) ~ 
+      "Engineering", 
+    grepl('[Ee]ducation', department) ~ 
+      "Education",
+    grepl('[Bb]usiness|[Mm]arketing|biz|[Ee]conomics', department) ~ 
+      "Economics or Business",
+    grepl('[Ee]nvironmental [Ss]cience|[Ll][Rr][Ee][Ss]|[Ll]and', department) ~ 
+      "Land Resources Environmental Science",
+    grepl('[Ee]ntomo', department) ~ 
+      "Land Resources Environmental Science",
+    grepl('[Mm]ath|[Ss]tat|[Dd]ata', department) ~ 
+      "Mathematics/Statistics/Data Science", 
+    grepl('[Ee]cology|[Ff]ish|[Ww]ild', department) ~ 
+      "Ecology",
+    grepl('Plant|PSPP', department) ~
+      "Plant Sciences & Plant Pathology", 
+    grepl("CBE", department) ~ 
+      "Center for Biofilm Engineering", 
+    grepl('[Cc]onservation [Bb]iology', department) ~ 
+      "Ecology", 
+    grepl('Earth Science|Snow Science', department) ~
+      "Earth Sciences", 
+    grepl('Health Science', department) ~
+      "Health & Human Development", 
+    grepl('[Zz]oo', department) ~ 
+      "Organismal Biology",
+    grepl('[Pp]ol [Ss]ci', department) ~
+      "Political Science", 
+    grepl('[Pp]syx', department) ~
+      "Psychology",
+    grepl('[Mm]icrobio|[Bb]iochem|[Bb]iosci|[Gg]enetic|[Ii]mmuno', department) ~
+      "Biochemistry/Microbiology",
+    grepl('University|Interdisc', department) ~
+      "Other",
+    grepl('GIS|Rstudio|N/A', department) ~ "NA",
+    TRUE ~ department
+    )
+)
+```
+
+
+# Separating Programming Languages 
+
+```{r}
+all_survey <- 
+  all_survey %>% 
+  mutate(python = ifelse(str_detect(cs_languages, "Python"), 
+                         "Yes", 
+                         "No"),
+         R = ifelse(str_detect(cs_languages, "R"), 
+                         "Yes", 
+                         "No"),
+         C = ifelse(str_detect(cs_languages, "C++"), 
+                         "Yes", 
+                         "No"),
+         matlab = ifelse(str_detect(cs_languages, "MatLab"), 
+                         "Yes", 
+                         "No"),
+         java = ifelse(str_detect(cs_languages, "Java"), 
+                         "Yes", 
+                         "No"),
+         fortran = ifelse(str_detect(cs_languages, "Fortran"), 
+                         "Yes", 
+                         "No"),
+         no_languages = case_when(str_detect(cs_languages, "None") ~ 
+                                    "None",
+                                  str_detect(cs_languages, 
+                                             "What is a programming language?") ~
+                                    "Unfamiliar"),
+         other_language = ifelse(str_detect(cs_languages, "Other"), 
+                         "Yes", 
+                         "No"),
+         SQL = ifelse(str_detect(cs_languages, "SQL"), 
+                         "Yes", 
+                         "No")
+  )
+         
+```
+
+
+# Separating Data Storage Methods
+
+```{r}
+all_survey <- 
+  all_survey %>% 
+  mutate(
+    store_excel = ifelse(
+      str_detect(data_storage, "Excel|.csv"),
+      "Yes", 
+      "No"),
+    store_access = ifelse(
+      str_detect(data_storage, "Access"), 
+      "Yes", 
+      "No"),
+    store_word = ifelse(
+      str_detect(data_storage, "Word"),
+      "Yes", 
+      "No"),
+    store_paper = case_when(
+      str_detect(data_storage, "paper") ~
+        "Yes",
+      str_detect(data_storage, "field book") ~ 
+        "Yes"),
+    store_text = ifelse(
+      str_detect(data_storage, "Text"),
+      "Yes", 
+      "No"),
+    store_excel = ifelse(
+      str_detect(data_storage, "Excel"), 
+      "Yes", 
+      "No"),
+    store_other = case_when(
+      str_detect(data_storage, "SPSS|.sav") ~ 
+        "Yes", 
+      str_detect(data_storage, "image") ~ 
+        "Yes", 
+      str_detect(data_storage, "books") ~ 
+        "Yes", 
+      str_detect(data_storage, "many") ~ 
+        "Yes"
+      )
+)
+         
+```
+
+
+# Separating Data Collection Participation
+
+```{r}
+
+all_survey <- 
+  all_survey %>% 
+  mutate(
+    self_collect = ifelse(
+      str_detect(data_collect_experience, "my own data"), 
+      "Yes", 
+      "No"), 
+    others_collect = ifelse(
+      str_detect(data_collect_experience, "others"), 
+      "Yes", 
+      "No"),
+    no_collect = ifelse(
+      str_detect(data_collect_experience, "No"), 
+      "Yes", 
+      "NA")
+)
+         
+```
+
+
+# Separating Reasons for Attending 
+
+```{r}
+all_survey <- 
+  all_survey %>% 
+  mutate(
+    research_help = ifelse(
+      str_detect(
+        tolower(reason_attend),
+        "research|analyze"), 
+      "Yes", 
+      "No"), 
+    coursework_help = ifelse(
+      str_detect(
+        tolower(reason_attend),
+        "course|stat"), 
+      "Yes", 
+      "No"), 
+    grad_or_career_prep = ifelse(
+      str_detect(
+        tolower(reason_attend),
+        "grad|career|job"), 
+      "Yes", 
+      "No"), 
+    adviser_recommend = ifelse(
+      str_detect(
+        tolower(reason_attend), 
+        "adviser"), 
+      "Yes", 
+      "No"), 
+    dept_recommend = ifelse(
+      str_detect(
+        tolower(reason_attend),
+        "department"), 
+      "Yes", 
+      "No"), 
+    flier = ifelse(
+      str_detect(
+        tolower(reason_attend),
+        "flier"), 
+      "Yes", 
+      "No"), 
+    network = ifelse(
+      str_detect(
+        tolower(reason_attend),
+        "network"), 
+      "Yes", 
+      "No"), 
+    refresh_update = ifelse(
+      str_detect(
+        tolower(reason_attend),
+        "refresh|brush up|broaden|improve|know more"), 
+      "Yes", 
+      "No"), 
+    professional_develop = ifelse(
+      str_detect(
+        tolower(reason_attend),
+        "professional|students|develop"), 
+      "Yes", 
+      "No"
+    )
+    
+)
+
+```
+
+
+# Separating Resources Used to Learn R 
+
+```{r}
+all_survey <- 
+  all_survey %>% 
+  mutate(
+    no_resources = case_when(
+      resources_used == "?" ~ 
+        "Yes", 
+      str_detect(
+        tolower(resources_used),
+        "n/a|haven't learned|haven't used yet|none") ~ 
+        "Yes"
+      ), 
+    previous_workshops = ifelse(
+      str_detect(
+        tolower(resources_used),
+        "your|these courses|this course|this workshop"), 
+      "Yes", 
+      "No"), 
+    adviser_resource = ifelse(
+      str_detect(
+        tolower(resources_used),
+        "adviser"), 
+      "Yes", 
+      "No"), 
+    course_resources = ifelse(
+      str_detect(
+        tolower(resources_used),
+        "course material"), 
+      "Yes", 
+      "No"), 
+    book_resources = ifelse(
+      str_detect(
+        tolower(resources_used),
+        "books"), 
+      "Yes", 
+      "No"), 
+    lab_resources = ifelse(
+      str_detect(
+        tolower(resources_used),
+        "lab mates"), 
+      "Yes", 
+      "No"), 
+    peer_resources = ifelse(
+      str_detect(
+        tolower(resources_used),
+        "peers"), 
+      "Yes", 
+      "No"), 
+    professor_resources = ifelse(
+      str_detect(
+        tolower(resources_used),
+        "professor"), 
+      "Yes", 
+      "No"), 
+    internet_resources = ifelse(
+      str_detect(
+        tolower(resources_used),
+        "internet|youtube"), 
+      "Yes", 
+      "No")
+
+  )
+
+```
+
+
+# Extracting Clean Data 
+
+```{r}
+write.csv(all_survey, "all_ws_presurvey.csv")
+```
+

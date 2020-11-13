@@ -1,0 +1,189 @@
+---
+title: "Visualizations & Summaries for Manuscript"
+author: "Allison Theobold, Stacey Hancock, & Sara Mannheimer"
+date: "12/30/2019"
+output: html_document
+---
+
+# Set-up Options  
+
+```{r}
+library(tidyverse)
+library(forcats)
+library(viridis)
+library(RColorBrewer)
+```
+
+# Read in Data  
+
+```{r data}
+pre_survey <- read_csv("all_ws_presurvey_clean.csv") %>% 
+  rename(Department = department, 
+         Occupation = occupation)
+
+post_assessment <- read_csv("all_ws_postassessment_clean.csv")
+
+```
+
+
+# Summarizing Department & Occupation Attendance
+
+```{r}
+pre_survey <- pre_survey %>%
+  mutate(Department = case_when(Department == 
+                                  "Land Resources Environmental Science" ~ 
+                                  "LRES",
+                                Department == 
+                                  "Mathematics/Statistics/Data Science" ~ 
+                                  "Math/Stat/Data Science",
+                                Department == 
+                                  "Animal and Range Sciences" ~ 
+                                  "Animal & Range Sciences",
+                                Department == 
+                                  "Biochemistry/Microbiology" ~ 
+                                  "Biochem/Microbio", 
+                                TRUE ~ Department), 
+         Department = fct_explicit_na(Department), 
+         Occupation = fct_explicit_na(Occupation), 
+         Occupation = fct_relevel(Occupation, 
+                                  "Bachelors",
+                                  "Master's",
+                                  "Doctorate",
+                                  "Post-Doctorate",
+                                  "Faculty",
+                                  "Staff",
+                                  "Other")
+         ) 
+
+dept_attend <- pre_survey %>% 
+  group_by(Department) %>%
+  summarize(Freq = n()) %>% 
+  arrange(desc(Freq)) 
+
+
+dept_occupation_attend <- pre_survey %>% 
+  group_by(Department, Occupation) %>%
+  summarize(Freq = n()) %>% 
+  arrange(desc(Freq)) %>% 
+  ungroup()
+
+
+palette <- c("#58CCED","#3895D3", "#1261A0", "#072F5F", 
+               "#e69138", "#85200c", "#FFD700")
+
+plot <- dept_occupation_attend %>% 
+  mutate(Department = factor(Department,
+                                  levels = dept_attend$Department)
+         ) %>%
+  ggplot(mapping = aes(x = Department, y = Freq, fill = Occupation)) + 
+  geom_bar(stat = "identity") + 
+  labs(x = "Department Affiliation", 
+       y = "Attendance") + 
+  theme_classic() +
+  coord_flip(ylim = c(0, 32), expand = FALSE) + 
+  theme(axis.text.x = element_text(size = 14), 
+        axis.title.y = element_blank(),
+        axis.text.y = element_text(size = 14),
+        axis.title.x = element_text(size = 14), 
+        legend.position = c(0.8, 0.8), 
+        legend.text = element_text(size = 14), 
+        legend.title = element_text(size = 14)) +
+  theme(panel.grid = element_blank(),
+        panel.border = element_blank()) + 
+  scale_fill_manual(values = palette)
+  
+ggsave(plot, file = "final_colors_attendance.png", dpi = 300, width = 12, height = 7)
+```
+
+
+# Summarizing Programming Languages  
+
+```{r}
+all_survey %>% 
+  gather(python:SQL, key = "language", value = "familiar") %>% 
+  filter(familiar == "Yes") %>% 
+  count(language) %>% 
+  arrange(desc(n))
+
+```
+
+
+# Summarizing Data Storage  
+
+```{r}
+all_survey %>% 
+  gather(store_excel:store_other, key = "storage method", value = "used") %>% 
+  filter(used == "Yes") %>% 
+  count(`storage method`) %>% 
+  arrange(desc(n))
+
+```
+
+
+# Summarizing Data Collection Experiences
+
+```{r}
+all_survey %>% 
+  gather(self_collect:no_collect, 
+         key = "collection", value = "participated") %>% 
+  filter(participated == "Yes") %>% 
+  count(collection) %>% 
+  arrange(desc(n))
+
+```
+
+
+# Summarizing Reasons for Attending  
+
+```{r}
+all_survey %>% 
+  gather(research_help:professional_develop, 
+         key = "reason", value = "agreed") %>% 
+  filter(agreed == "Yes") %>% 
+  count(reason) %>% 
+  arrange(desc(n))
+
+```
+
+
+# Summarizing Resources Used  
+
+```{r}
+all_survey %>% 
+  gather(no_resources:internet_resources, 
+         key = "resource", value = "used") %>% 
+  filter(used == "Yes") %>% 
+  count(resource) %>% 
+  arrange(desc(n))
+
+```
+
+
+# Summarizing Workshop Attendees Who Returned for Additional Workshops 
+
+```{r}
+intro_intermed <- all_ws %>% 
+                    filter(workshop %in% 
+                             c("Introduction to R", "Intermediate R"), 
+                           semester %in% c("f18", "s19"))
+
+
+intro_intermed %>% 
+  filter(!is.na(identifier)) %>%
+  group_by(identifier) %>% 
+  summarize(count = n()) %>% 
+  filter(count > 1)
+
+## 8/63 came back to Intermediate R
+
+
+intro_intermed %>% 
+  filter(is.na(identifier)) %>%
+  group_by(last_name) %>% 
+  summarize(count = n()) %>% 
+  filter(count > 1)
+
+## 3/42 came back to Intermediate R
+
+```
+
