@@ -8,7 +8,7 @@
 
 To cite this article:  
 
-[Preprint of the paper](https://github.com/atheobold/data-science-ws-jse/blob/master/paper/workshops.pdf)
+[Preprint of the paper](https://github.com/atheobold/data-science-ws/blob/main/workshops.pdf)
 
 # Abstract 
 
