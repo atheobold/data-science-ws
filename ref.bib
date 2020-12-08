@@ -37,7 +37,7 @@
 	pages = "58--65",
 	number = "1",
 	journal = "The American Statistician",
-	author = "Mine Cetinkaya-Rundel and Colin Rundel",
+	author = "Mine {\c C}etinkaya-Rundel and Colin Rundel",
 	year = "2018"
 	}
 	
@@ -260,8 +260,18 @@ url = {https://rstudio.cloud}
   month = "December",
   year = "2018",
   url = "http://datacarpentry.org/R-ecology-lesson/",
-  doi = "10.5281/zenodo.3264888"
+  doi = "10.5281/zenodo.3264888",
   notes = {Version v2017.04.3}
+}
+
+@Misc{r_reproducible,
+  author = {Wright, Thomas and Zimmerman, Naupaka},
+  title = {Software Carpentry: {R} for Reproducible Scientific Analysis},
+  month = "June",
+  year = "2016",
+  url = "https://github.com/swcarpentry/r-novice-gapminder",
+  doi = "10.5281/zenodo.57520",
+  notes = {Version 2016.06}
 }
 
 @article{portal_data,
@@ -285,16 +295,16 @@ url = {https://ggplot2.tidyverse.org},
 @Manual{dplyr,
 title = {dplyr: A Grammar of Data Manipulation},
 author = {Wickham, Hadley and Romain Francois, Romain and Henry, Lionel and Muller, Kirill},
-year = {2020},
-note = {R package version 0.8.5},
+year = {2018},
+note = {R package version 0.7.5},
 url = {https://CRAN.R-project.org/package=dplyr},
 }
 
 @Manual{tidyr,
 title = {tidyr: Tidy Messy Data},
 author = {Hadley Wickham and Lionel Henry},
-year = {2020},
-note = {R package version 1.0.2},
+year = {2018},
+note = {R package version 0.8.0},
 url = {https://CRAN.R-project.org/package=dplyr},
 }
 
@@ -315,13 +325,24 @@ year = {2019},
 note = {R package version 1.16. Available at \href{https://CRAN.R-project.org/package=rmarkdown}{https://CRAN.R-project.org/package=rmarkdown}}
 }
 
-@Manual{tidyverse,
-title = {tidyverse: Easily Install and Load the `Tidyverse'},
-author = {Hadley Wickham},
-year = {2017},
-note = {R package version 1.2.1},
-url = {https://CRAN.R-project.org/package=tidyverse},
-}
+@Article{tidyverse,
+    title = {Welcome to the {tidyverse}},
+    author = {Hadley Wickham and Mara Averick and Jennifer Bryan and Winston Chang and Lucy D'Agostino McGowan and Romain Fran{\c c}ois and Garrett Grolemund and Alex Hayes and Lionel Henry and Jim Hester and Max Kuhn and Thomas Lin Pedersen and Evan Miller and Stephan Milton Bache and Kirill M{\"u}ller and Jeroen Ooms and David Robinson and Dana Paige Seidel and Vitalie Spinu and Kohske Takahashi and Davis Vaughan and Claus Wilke and Kara Woo and Hiroaki Yutani},
+    year = {2019},
+    journal = {Journal of Open Source Software},
+    volume = {4},
+    number = {43},
+    pages = {1686},
+    doi = {10.21105/joss.01686},
+  }
+  
+  @Manual{purrr,
+    title = {purrr: Functional Programming Tools},
+    author = {Lionel Henry and Hadley Wickham},
+    year = {2020},
+    note = {R package version 0.3.4},
+    url = {https://CRAN.R-project.org/package=purrr},
+  }  
   
 @book{asa, 
 title = {2014 curriculum guidelines for undergraduate programs in statistical science}, 
@@ -396,7 +417,7 @@ year = "2009"
 	publisher = {{ACM}},
 	author = {Dodds, Zachary and Libeskind-Hadas, Ran and Alvarado, Christine and Kuenning, Geoff},
 	year = {2008}, 
-	booktitle = {Proceedings of the 2008 SIGCSE}
+	booktitle = {Proceedings of the 2008 Special Interest Group on Computer Science Education (SIGCSE)}
 }
 
 @article{eglen, 
@@ -443,7 +464,7 @@ year =    {2006}
 	title = {{CS-1} for scientists},
 	eventtitle = {39th {ACM} {SIGCSE}},
 	pages = {36--37},
-	booktitle = {Proceedings of the 2008 SIGCSE},
+	booktitle = {Proceedings of the 2008 Special Interest Group on Computer Science Education (SIGCSE)},
 	location = {Portland, Oregon},
 	publisher = {{ACM}},
 	author = {Wilson, G. and Alvarado, C. and Campbell, J. and Landau, R. and Sedgewich, R.},
@@ -473,7 +494,7 @@ note = {\href{https://carpentries.org/}{https://carpentries.org/}}
 	publisher = {{ACM}},
 	author = {Dodds, Zachary and Alvarado, Christine and Kuenning, Geoff and Libeskind-Hadas, Ran},
 	year = {2007}, 
-	booktitle = {Proceedings of the 2007 ITiCSE}
+	booktitle = {Proceedings of the 2007 Innovation and Technology in Computer Science Education (ITiCSE)}
 }
 
 @Manual{data-carpentry,
@@ -496,7 +517,7 @@ note = {\href{https://software-carpentry.org/}{https://software-carpentry.org/}}
 	pages = {1--22},
 	number = {1},
 	journal = {Technology Innovations in Statistics Education},
-	author = {Baumer, Ben and Cetinkaya-Rundel, Mine and Bray, Andrew and Loi, Linda and Horton, Nicholas J.},
+	author = {Baumer, Ben and {\c C}etinkaya-Rundel, Mine and Bray, Andrew and Loi, Linda and Horton, Nicholas J.},
 	year = {2014}
 }
 
@@ -577,7 +598,7 @@ address = {Alexandria, VA}
 }
 
 @misc{mine-jsm, 
-author = {Cetinkaya-Rundel, Mine}, 
+author = {{\c C}etinkaya-Rundel, Mine}, 
 title = {Intro Stats, Intro Data Science: Do we need both?},
 year = {2018},
 howpublished = {Presented at the 2018 Joint Statistical Meetings}
@@ -732,4 +753,12 @@ year  = {2013},
 volume = {9}, 
 number = {10}, 
 pages = {e1003285}
+}
+
+@misc{dryad_data, 
+author = {Theobold, A. S., Hancock, S. A., and Mannheimer, S.}, 
+year = {2020}, 
+title = {Data from: Designing data science workshops for data-intensive environmental science research}, 
+publisher = {Dryad}, 
+doi = {https://doi.org/10.5061/dryad.7wm37pvp7}
 }
