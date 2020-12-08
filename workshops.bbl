@@ -1,0 +1,349 @@
+\begin{thebibliography}{}
+
+\bibitem[{A}merican {S}tatistical {A}ssociation {U}ndergraduate~{G}uidelines
+  {W}orkgroup, 2014]{asa}
+{A}merican {S}tatistical {A}ssociation {U}ndergraduate~{G}uidelines {W}orkgroup
+  (2014).
+\newblock {\em 2014 curriculum guidelines for undergraduate programs in
+  statistical science}.
+\newblock American Statistical Association, Alexandria, VA.
+
+\bibitem[Andelman et~al., 2004]{andelman}
+Andelman, S.~J., Bowles, C.~M., Willig, M.~R., and Waide, R.~B. (2004).
+\newblock Understanding environmental complexity through a distributed
+  knowledge network.
+\newblock {\em BioScience}, 54(3):240--246.
+
+\bibitem[{ASA GAISE College Group}, 2016]{gaise}
+{ASA GAISE College Group} (2016).
+\newblock {\em Guidelines for Assessment and Instruction in Statistics
+  Education College Report 2016}.
+\newblock American Statistical Association, Alexandria, VA.
+
+\bibitem[Baumer, 2015]{baumer_datascience}
+Baumer, B. (2015).
+\newblock A data science course for undergraduates: Thinking with data.
+\newblock {\em The American Statistician}, 69(4):334--342.
+
+\bibitem[Baumer et~al., 2014]{mine-rmarkdown}
+Baumer, B., {\c C}etinkaya-Rundel, M., Bray, A., Loi, L., and Horton, N.~J.
+  (2014).
+\newblock R markdown: Integrating a reproducible analysis tool into
+  introductory statistics.
+\newblock {\em Technology Innovations in Statistics Education}, 8(1):1--22.
+
+\bibitem[Baumer et~al., 2015]{horton_takingachance}
+Baumer, B.~S., Horton, N.~J., and Wickham, H. (2015).
+\newblock Setting the stage for data science: Integration of data management
+  skills in introductory and second courses in statistics.
+\newblock {\em CHANCE}, 28(2):40--50.
+
+\bibitem[Cassey and Blackburn, 2006]{reproducibilty-comment}
+Cassey, P. and Blackburn, T.~M. (2006).
+\newblock Reproducibility and repeatability in ecology.
+\newblock {\em BioScience}, 56(12):98.
+
+\bibitem[{\c C}etinkaya-Rundel, 2018]{mine-jsm}
+{\c C}etinkaya-Rundel, M. (2018).
+\newblock Intro stats, intro data science: Do we need both?
+\newblock Presented at the 2018 Joint Statistical Meetings.
+
+\bibitem[{\c C}etinkaya-Rundel and Rundel, 2018]{mine}
+{\c C}etinkaya-Rundel, M. and Rundel, C. (2018).
+\newblock Infrastructure and tools for teaching computing throughout the
+  statistical curriculum.
+\newblock {\em The American Statistician}, 72(1):58--65.
+
+\bibitem[Cobb, 2015]{cobb}
+Cobb, G. (2015).
+\newblock Mere renovation is too little too late: We need to rethink our
+  undergraduate curriculum from the ground up.
+\newblock {\em The American Statistician}, 69(4):266--282.
+
+\bibitem[Cobb et~al., 2003]{confrey}
+Cobb, P.~A., Confrey, J., diSessa, A.~A., Lehrer, R., and Schauble, L. (2003).
+\newblock Design experiments in educational research.
+\newblock {\em Educational Researcher}, 32(1):9--13.
+
+\bibitem[Conrado et~al., 2018]{ecology_curriculum}
+Conrado, A.~C., Fournier, A.~M., Michonneau, F., and Seok, B. (2018).
+\newblock datacarpentry/r-ecology-lesson: Data carpentry: Data analysis and
+  visualization in {R} for ecologists.
+
+\bibitem[Dodds et~al., 2007]{dodds1}
+Dodds, Z., Alvarado, C., Kuenning, G., and Libeskind-Hadas, R. (2007).
+\newblock Breadth-first {CS} 1 for scientists.
+\newblock In {\em Proceedings of the 2007 Innovation and Technology in Computer
+  Science Education (ITiCSE)}. {ACM}.
+
+\bibitem[Dodds et~al., 2008]{dodds2}
+Dodds, Z., Libeskind-Hadas, R., Alvarado, C., and Kuenning, G. (2008).
+\newblock Evaluating a breadth-first {CS} 1 for scientists.
+\newblock In {\em Proceedings of the 2008 Special Interest Group on Computer
+  Science Education (SIGCSE)}. {ACM}.
+
+\bibitem[Eglen, 2009]{eglen}
+Eglen, S.~J. (2009).
+\newblock A quick guide to teaching {R} programming to computational biology
+  students.
+\newblock {\em {PLOS} Computational Biology}, 5(8):1--4.
+
+\bibitem[Ellison, 2010]{repeatability}
+Ellison, A.~M. (2010).
+\newblock Repeatability and transparency in ecological research.
+\newblock {\em Ecology}, 91(9):2536--2539.
+
+\bibitem[Ernest et~al., 2018]{portal_data}
+Ernest, M., Brown, J., Valone, T., and White, E.~P. (2018).
+\newblock Portal project teaching database.
+
+\bibitem[Fishman et~al., 2013]{penuel}
+Fishman, B.~J., Penuel, W.~R., Allen, A.-R., Cheng, B.~H., and Sabelli, N.
+  (2013).
+\newblock Design-based implementation research: An emerging model for
+  transforming the relationship of research and practice.
+\newblock In Fishman, B.~J. and Penuel, W.~R., editors, {\em Design Based
+  Implementation Research}, volume 112, pages 136--156. National Society for
+  the Study of Education.
+
+\bibitem[Gould, 2010]{gould}
+Gould, R. (2010).
+\newblock Statistics and the modern student.
+\newblock {\em International Statistics Reveiw}, 78(2):297--315.
+
+\bibitem[Green et~al., 2005]{green}
+Green, J.~L., Hastings, A., Arzberger, P., Ayala, F.~J., Cottingham, K.~L.,
+  Cuddington, K., Davis, F., Dunne, J.~A., Fortin, M.-J., Gerber, L., and
+  Neubert, M. (2005).
+\newblock Complexity in ecology and conservation: Mathematical, statistical,
+  and computational challenges.
+\newblock {\em BioScience}, 55(6):501--510.
+
+\bibitem[Hampton et~al., 2017]{hampton}
+Hampton, S.~E., Jones, M.~B., Wasser, L.~A., Schildhauer, M.~P., Supp, S.~R.,
+  Brun, J., Hernandez, R.~R., Boettiger, C., Collins, S.~L., Gross, L.~J.,
+  Fernandez, D.~S., Budden, A., White, E.~P., Teal, T.~K., Labou, S.~G., and
+  Aukema, J.~E. (2017).
+\newblock Skills and knowledge for data-intensive environmental research.
+\newblock {\em BioScience}, 67(6):546--557.
+
+\bibitem[Hardin et~al., 2015]{hardin}
+Hardin, J., Hoerl, R., Horton, N.~J., Nolan, D., Baumer, B., Hall-Holt, O.,
+  Murrell, P., Peng, R., Roback, P., Lang, D.~T., and Ward, M.~D. (2015).
+\newblock Data science in statistics curricula: Preparing students to {``think
+  with data''}.
+\newblock {\em The American Statistician}, 69(4):343--353.
+
+\bibitem[Hastings et~al., 2005]{hastings}
+Hastings, A., Arzberger, P., Bolker, B., Collins, S., Ives, Anthony, R.,
+  Johnson, N.~A., and Palmer, M.~A. (2005).
+\newblock Quantitative bioscience for the 21st century.
+\newblock {\em BioScience}, 55(6):511--517.
+
+\bibitem[He et~al., 2019]{crossroads}
+He, X., Madigan, D., Yu, B., and Wellner, J. (2019).
+\newblock Statistics at a crossroads: {W}ho is for the challenge.
+\newblock Technical report, The National Science Foundation.
+\newblock
+  \href{https://hub.ki/files/MTRjZGIzZDFkMzI4NjdhNjg4ZDFjM2E4OGFiYzIyMDMxM2VkYWMzMTk3OThiODFkYTUwNTIwNTEwNTQwMzU1MjovdmFyL3d3dy9odWJraS9hcHAvc2l0ZS9jb2xsZWN0aW9ucy83MjYzL1N0YXRpc3RpY3NfYXRfYV9Dcm9zc3JvYWRzX1JlcG9ydF9KdWx5XzIwMTkucGRm}.
+
+\bibitem[Henry and Wickham, 2020]{purrr}
+Henry, L. and Wickham, H. (2020).
+\newblock {\em purrr: Functional Programming Tools}.
+\newblock R package version 0.3.4.
+
+\bibitem[Hernandez et~al., 2012]{hernandez}
+Hernandez, R.~R., Mayernik, M.~S., Murphy-Mariscal, M.~L., and Allen, M.~F.
+  (2012).
+\newblock Advanced technologies and data management practices in environmental
+  science: Lessons from academia.
+\newblock {\em BioScience}, 62(12):1067--1076.
+
+\bibitem[Horton and Hardin, 2015]{horton_thinkwithdata}
+Horton, N.~J. and Hardin, J.~S. (2015).
+\newblock Teaching the next generation of statistics students to ``think with
+  data'': Special issue on statistics and the undergraduate curriculum.
+\newblock {\em The American Statistician}, 69(4):259--265.
+
+\bibitem[Kaplan, 2018]{kaplan}
+Kaplan, D. (2018).
+\newblock Teaching stats for data science.
+\newblock {\em The American Statistician}, 72(1):89--96.
+
+\bibitem[Kelling et~al., 2009]{kelling}
+Kelling, S., Hochachka, W.~M., Fink, D., Riedewald, M., Caruana, R., Ballard,
+  G., and Hooker, G. (2009).
+\newblock Data-intensive science: A new paradigm for biodiversity studies.
+\newblock {\em BioScience}, (59):613--620.
+
+\bibitem[Kitzes et~al., 2018]{reproducible}
+Kitzes, J., Turek, D., and Deniz, F. (2018).
+\newblock {\em The Practice of Reproducible Research: Case Studies and Lessons
+  from the Data-Intensive Sciences}.
+\newblock University of California Press, Okland, CA.
+\newblock Available from: https://www.practicereproducibleresearch.org/.
+
+\bibitem[Lai et~al., 2019]{Rpopular}
+Lai, J., Lortie, C.~J., Muenchen, R.~A., Yang, J., and Ma, K. (2019).
+\newblock Evaluating the popularity of {R} in ecology.
+\newblock {\em Ecosphere}, 10(1).
+
+\bibitem[Manyika et~al., 2011]{mckinsey}
+Manyika, J., Chui, M., Brown, B., Bughin, J., Dobbs, R., Roxburgh, C., and
+  Byers, A.~H. (2011).
+\newblock Big data: The next frontier for innovation, competition, and
+  productivity.
+\newblock Technical report, McKinsey Global Institute.
+
+\bibitem[McNamara, 2018]{mcnamara}
+McNamara, A. (2018).
+\newblock Imagining the future of statistical education software.
+\newblock In {\em Proceedings of the 10th International Conference on Teaching
+  Statistics (ICOTS)}.
+
+\bibitem[Miles et~al., 2014]{miles}
+Miles, M.~B., Huberman, A.~M., and Saldana, J. (2014).
+\newblock {\em Qualitative Data Analysis, A Methods Sourcebook}.
+\newblock SAGE, Thousand Oaks, CA, 3rd edition.
+
+\bibitem[Mislan et~al., 2016]{mislan}
+Mislan, K., Heer, J.~M., and White, E.~P. (2016).
+\newblock Elevating the status of code in ecology.
+\newblock {\em Trends in Ecology \& Evolution}, 31(1):4--7.
+
+\bibitem[Morrison et~al., 2016]{pva}
+Morrison, C., Wardle, C., and Castley, J. (2016).
+\newblock Repeatability and reproducibility of population viability analysis
+  (pva) and the implications for threatened species management.
+\newblock {\em Frontiers in Ecology and Evolution}, 4:98.
+
+\bibitem[{{N}ational {A}cademies of {S}ciences, {E}ngineering, and {M}edicine},
+  2018]{nas}
+{{N}ational {A}cademies of {S}ciences, {E}ngineering, and {M}edicine} (2018).
+\newblock {\em Data Science for Undergraduates: Opportunities and Options}.
+\newblock The National Academies Press, Washington, DC.
+
+\bibitem[Nolan and Perrett, 2016]{nolan-viz}
+Nolan, D. and Perrett, J. (2016).
+\newblock Teaching and learning data visualization: Ideas and assignments.
+\newblock {\em The American Statistician}, 70(3):260--269.
+
+\bibitem[Nolan and {Temple Lang}, 2010]{nolan}
+Nolan, D. and {Temple Lang}, D. (2010).
+\newblock Computing in the statistics curriculum.
+\newblock {\em The American Statistician}, 64(2):97--107.
+
+\bibitem[Nolan and Temple~Lang, 2015]{esr}
+Nolan, D. and Temple~Lang, D. (2015).
+\newblock Explorations in statistics research: An approach to expose
+  undergraduates to authentic data analysis.
+\newblock {\em The American Statistician}, 69(4):292--299.
+
+\bibitem[O'Neill, 2012]{oneill}
+O'Neill, D.~K. (2012).
+\newblock Designs that fly: What the history of aeronautics tells us about the
+  future of design-based research in education.
+\newblock {\em International Journal of Research and Method in Education},
+  35(2):119--140.
+
+\bibitem[Powers and Hampton, 2019]{reproducibility_ecology}
+Powers, S.~M. and Hampton, S.~E. (2019).
+\newblock Open science, reproducibility, and transparency in ecology.
+\newblock {\em Ecological Applications}, 29(1).
+
+\bibitem[Ross et~al., 2017]{tidytools}
+Ross, Z., Wickham, H., and Robinson, D. (2017).
+\newblock Declutter your {R} workflow with tidy tools.
+\newblock Technical report, PeerJ Preprints.
+
+\bibitem[{RStudio Team}, 2015a]{RStudioCloud}
+{RStudio Team} (2015a).
+\newblock {\em RStudio Cloud}.
+\newblock RStudio, Inc., Boston, MA.
+
+\bibitem[{RStudio Team}, 2015b]{rstudio}
+{RStudio Team} (2015b).
+\newblock {\em RStudio: Integrated Development Environment for R}.
+\newblock RStudio, Inc., Boston, MA.
+
+\bibitem[Strasser and Hampton, 2012]{labs}
+Strasser, C.~A. and Hampton, S.~E. (2012).
+\newblock The fractured lab notebook: Undergraduates and ecological data
+  management training in the united states.
+\newblock {\em Ecosphere}, 3(12):1--18.
+
+\bibitem[Teal et~al., 2015]{carpentry}
+Teal, T.~K., Cranston, K.~A., Lapp, H., White, E., Wilson, G., Ram, K., and
+  Pawlik, A. (2015).
+\newblock Data carpentry: Workshops to increase data literacy for researchers.
+\newblock {\em International Journal of Digital Curation}, 10(1):343--353.
+
+\bibitem[Theobold and Hancock, 2019]{theobold}
+Theobold, A. and Hancock, S. (2019).
+\newblock How environmental science graduate students acquire statistical
+  computing skills.
+\newblock {\em Statistics Education Research Journal}, 18(2):68--85.
+
+\bibitem[Theobold and Mannheimer, 2020]{dryad_data}
+Theobold, A.~S., H. S.~A. and Mannheimer, S. (2020).
+\newblock Data from: Designing data science workshops for data-intensive
+  environmental science research.
+
+\bibitem[Wickham, 2014]{tidy}
+Wickham, H. (2014).
+\newblock Tidy data.
+\newblock {\em The Journal of Statistical Software}, 59.
+
+\bibitem[Wickham, 2016]{ggplot}
+Wickham, H. (2016).
+\newblock {\em ggplot2: Elegant Graphics for Data Analysis}.
+\newblock Springer-Verlag, New York.
+
+\bibitem[Wickham et~al., 2019]{tidyverse}
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L.~D., Fran{\c c}ois,
+  R., Grolemund, G., Hayes, A., Henry, L., Hester, J., Kuhn, M., Pedersen,
+  T.~L., Miller, E., Bache, S.~M., M{\"u}ller, K., Ooms, J., Robinson, D.,
+  Seidel, D.~P., Spinu, V., Takahashi, K., Vaughan, D., Wilke, C., Woo, K., and
+  Yutani, H. (2019).
+\newblock Welcome to the {tidyverse}.
+\newblock {\em Journal of Open Source Software}, 4(43):1686.
+
+\bibitem[Wickham and Henry, 2018]{tidyr}
+Wickham, H. and Henry, L. (2018).
+\newblock {\em tidyr: Tidy Messy Data}.
+\newblock R package version 0.8.0.
+
+\bibitem[Wickham et~al., 2018]{dplyr}
+Wickham, H., Romain~Francois, R., Henry, L., and Muller, K. (2018).
+\newblock {\em dplyr: A Grammar of Data Manipulation}.
+\newblock R package version 0.7.5.
+
+\bibitem[Wilson, 2006]{wilson-software-carpentry}
+Wilson, G. (2006).
+\newblock Software carpentry: {G}etting scientists to write better code by
+  making them more productive.
+\newblock {\em Computing in Science \& Engineering}, 8(6):66--69.
+
+\bibitem[Wilson et~al., 2008]{wilson}
+Wilson, G., Alvarado, C., Campbell, J., Landau, R., and Sedgewich, R. (2008).
+\newblock {CS-1} for scientists.
+\newblock In {\em Proceedings of the 2008 Special Interest Group on Computer
+  Science Education (SIGCSE)}, pages 36--37. {ACM}.
+
+\bibitem[Wing, 2006]{wing}
+Wing, J. (2006).
+\newblock Computational thinking.
+\newblock {\em Communications of {ACM}}, 49(3):33--35.
+
+\bibitem[Word et~al., 2017]{null-carpentries}
+Word, K.~R., Jordan, K., Becker, E., Williams, J., Reynolds, P., Hodge, A.,
+  Belkin, M., Marwick, B., and Teal, T. (2017).
+\newblock When do workshops work? {A} response to the `{N}ull {E}ffects' paper
+  from {F}eldon et al.
+\newblock Technical report, Software Carpentry.
+
+\bibitem[Wright and Zimmerman, 2016]{r_reproducible}
+Wright, T. and Zimmerman, N. (2016).
+\newblock Software carpentry: {R} for reproducible scientific analysis.
+
+\end{thebibliography}
