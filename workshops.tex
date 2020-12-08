@@ -45,8 +45,8 @@
   \title{\bf Designing Data Science Workshops for Data-Intensive Environmental 
   Science Research}
   \author{Allison S. Theobold \thanks{The authors gratefully acknowledge the 
-  \textit{National Network of Library of Medicine}
-    Data Engagement PNR grant for supporting this research.} \hspace{.2cm}\\
+  \textit{National Network of Library of Medicine}- Pacific Northwest Region for
+  supporting this research.} \hspace{.2cm}\\
     Department of Statistics, California Polytechnic University \\
     San Luis Obispo, CA \\
     atheobol@calpoly.edu \\
@@ -143,7 +143,7 @@ incorporated into environmental science programs, often these courses fail to
 arm students with the data science skills necessary for research. A ``symptom of
 the current curriculum's shortcomings'' \citep[p.\ 547]{hampton} is the
 emergence of a variety of extracurricular opportunities for acquiring critical
-data science skills, such as Data Carpentry (\citeyear{data-carpentry}). While
+data science skills, such as Data Carpentry. While
 Data Carpentry's workshops teach domain-specific lessons covering the
 ``fundamental data skills'' needed for the ``full lifecycle of data-driven
 research,'' the possibility of further tailoring these workshops to populations
@@ -177,7 +177,7 @@ necessary to engage in the entire data analysis cycle rather than focusing
 solely on the ``analysis'' portion of the cycle, due to the firm grounding of 
 statistical preparation environmental science students experiences during their
 degrees. These statistics courses, however, often do not expose students to data
-science skills that may be necessary for them to carry out an analysis they had
+science skills that may be necessary for them to carry out an analysis they
 learned in the classroom in the context of real data. The skills necessary for
 students to engage in this cycle may include general programming concepts such
 as looping, user-defined functions, or conditional statements. However, the
@@ -300,10 +300,10 @@ Introductory Statistics course without a set of data science skills applicable
 to their lives---a frustration echoed by environmental science educators 
 \citep{hampton, carpentry}. 
 
-\quad The fundamental question raised 
-ten years ago by Nolan and Temple Lang still applies today: do our students
-leave the statistics classroom able to ``compute confidently, reliably, and
-efficiently?'' (\citeyear{nolan}, p.\ 100). An in-depth study of environmental 
+\quad The fundamental question raised ten years ago by Nolan and Temple Lang
+still applies today: do our students leave the statistics classroom able to
+``compute confidently, reliably, and efficiently?'' (\citeyear{nolan}, p.\ 100).
+An in-depth study of environmental 
 science graduate students' experiences acquiring the computing knowledge
 necessary for their research answered this question with a resounding `no' 
 \citep{theobold}. Like the hypothesis of Teal and colleagues (2015), these
@@ -386,8 +386,7 @@ outlining the computational skills environmental science faculty members
 identified as necessary for graduate students to succeed in their independent
 research. Phase two of this research, described in Section \ref{sec:workshops},
 used the skills identified during phase one to tailor currently existing Data 
-Carpentry (\citeyear{data-carpentry}) and Software Carpentry 
-(\citeyear{software-carpentry}) lessons to this population. Section 
+Carpentry and Software Carpentry lessons to this population. Section 
 \ref{sec:implement} chronicles the third phase of this research, where the 
 workshops were implemented and evaluated, specifically focusing on the
 backgrounds and experiences of workshop attendees. 
@@ -400,8 +399,7 @@ backgrounds and experiences of workshop attendees.
 % future research investigating the learning outcomes of workshop attendees.
 
 \quad The content of these tailored workshops was informed by the Data 
-Carpentry (\citeyear {data-carpentry}) and Software Carpentry 
-(\citeyear{software-carpentry}) curriculum. Adhering to the recommendations of 
+Carpentry and Software Carpentry curriculum. Adhering to the recommendations of 
 the National Academies of Sciences, Engineering, and Medicine (NASEM)
 (\citeyear{nas}), Data Carpentry offers domain-specific curricula, so
 participants ``learn more quickly and effectively,'' and can ``see more
@@ -462,9 +460,8 @@ by department.}
 interview regarding (1) the computational skills they believe are necessary for
 master's and doctoral students to implement statistics for research in their
 field, and (2) how they believe graduate students acquire these necessary
-skills. The full interview protocol is available as supplementary 
-material\footnote{Materials associated with this manuscript are available at:
-\url{https://github.com/atheobold/data-science-ws}.}.
+skills. The interview protocol, data, and analysis files associated with this
+manuscript are available through Dryad \citep{dryad_data}. 
 
 \quad The primary author led a three-stage data analysis process of the faculty
 interviews (Miles, Huberman, Salada$\tilde{\text{n}}$a, \citeyear{miles}). 
@@ -618,8 +615,9 @@ the basics of programming in \texttt{R}, (2) intermediate programming tasks in
 Importantly, the first workshop does not assume attendees have previous
 experience working in \texttt{R}, and each workshop builds on the knowledge
 acquired at the previous workshop(s). The workshop materials developed for this
-research are available through GitHub, with video tutorials recorded and
-available through our institution's library\footnote{
+research are available through GitHub\footnote{The GitHub repository can be
+accessed here: \url{https://github.com/atheobold/data-science-ws}}, with video
+tutorials recorded and available through our institution's library\footnote{
 Montana State University Library videos can be accessed here: 
 \url{http://bit.ly/ws_recordings}}.
 
@@ -637,7 +635,7 @@ hands-on tasks.
 
 During the workshop, each topic was first introduced by the instructor, 
 followed by the live coding of an example. The group then engaged in a
-discussion of the computing concept. This group dialogue created an inclusive
+discussion of the computing concept(s). This group dialogue created an inclusive
 space where attendees were able to pose questions or conjectures to the group
 while the instructor live coded questions asked or participants' conjectures.
 Finally, attendees grouped up to complete a set of hands-on tasks, applying the
@@ -780,7 +778,8 @@ for Ecologists} lesson. Yet, conditional statements, looping, and user-defined
 functions are skills that many faculty asserted were necessary for graduate
 students to possess as they perform independent research. Many of these
 concepts, however, are included in Software Carpentry's 
-\emph{\texttt{R} for Reproducible Scientific Analysis} lesson. 
+\emph{\texttt{R} for Reproducible Scientific Analysis} lesson
+\citep{r_reproducible}. 
 
 \quad The workshop first progresses through the use of relational
 statements and linking these statements using and (\texttt{\&}), or
@@ -799,7 +798,8 @@ through exercises which repeat operations on a dataset using both a
 discussion of why vectorization is recommended for non-recursive
 \texttt{for()} loops. In
 the interest of time, participants are provided with resources to continue
-learning about vectorized operations using the \textbf{purrr} package. 
+learning about vectorized operations using the \textbf{purrr} package 
+\citep{purrr}.  
 
 \quad To conclude, functions are presented as an approach to replicate the same
 set of instructions throughout your code. Inspired by a script
@@ -923,7 +923,7 @@ attendees and their reported occupation.
 \includegraphics[width = \textwidth]{images/ws_attendance.png}
 \caption{Number of workshop attendees during the 2018-2019 academic year, by
 department and current occupation, selected from an itemized list of campus
-departments and positions in the pre-workshop survey.}
+departments and occupations in the pre-workshop survey.}
     \label{fig:departments}
 \end{figure}
 }
@@ -1016,7 +1016,7 @@ code, what certain symbols/terms/etc mean and how they work.''
 \section{Sustainability of Workshops}  
 \label{sec:sustainability}
 
-To date, we have held 14 workshops, serving 382 members of the Anonymous State     
+To date, we have held 14 workshops, serving 382 members of the Montana State     
 University community. To facilitate the sustainability of these workshops, we
 forged a partnership between our institution's library and the Department of
 Mathematical Science's Statistical Consulting and Research Services (SCRS). We
@@ -1034,7 +1034,7 @@ results of this research into the broader Data and Software Carpentry curricula.
 A \$5,000 faculty excellence grant during the 2019-2020 academic year,
 facilitated the implementation of a ``train-the-trainer'' model, training two 
 future graduate student instructors. Instructors were recruited from the
-Master's and Doctoral programs in Statistics, but because of the widespread use
+Master and Doctoral programs in Statistics, but because of the widespread use
 of \texttt{R} across scientific fields, graduate students from a variety of
 backgrounds also hold the potential to be effective instructors. Both semesters,
 the authors met with these students for one hour a week to build students'
