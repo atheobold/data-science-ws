@@ -28,7 +28,7 @@ viz <- read_csv("viz_survey_raw.csv")
 
 introR <- introR %>% 
   rename(survey_time = Timestamp, 
-         identifier = `Please enter a unique identifier as follows: Number of pets (as numeric) + First two letters of your last name (lowercase) + First three letters of your current street (lowercase).  (e.g. I have no pets, my last name is Theobold, and I live on Beall Street, my unique identifier would be 0thbea)`,
+         identifier = `ID`,
          department = `Please indicate your relevant departmental affiliation. Check all that apply.`,
          occupation = `Your current occupation at the university`, 
          cs_course_count = `How many computer science courses (undergrad or grad) have you taken?`, 
@@ -49,7 +49,7 @@ introR <- introR %>%
 
 intermedR <- intermedR %>% 
   rename(survey_time = Timestamp, 
-         identifier = `Please enter a unique identifier as follows: Number of pets (as numeric) + First two letters of your last name (lowercase) + First three letters of your current street (lowercase).  (e.g. I have no pets, my last name is Theobold, and I live on Beall Street, my unique identifier would be 0thbea)`,
+         identifier = ID,
          department = `Please indicate your relevant departmental affiliation. Check all that apply.`,
          occupation = `Your current occupation at the university`, 
          cs_course_count = `How many computer science courses (undergrad or grad) have you taken?`, 
@@ -70,7 +70,7 @@ intermedR <- intermedR %>%
 
 wrangle <- wrangle %>% 
   rename(survey_time = Timestamp, 
-         identifier = `Please enter a unique identifier as follows: Number of pets (as numeric) + First two letters of your last name (lowercase) + First three letters of your current street (lowercase).  (e.g. I have no pets, my last name is Theobold, and I live on Beall Street, my unique identifier would be 0thbea)`,
+         identifier = ID,
          department = `Please indicate your relevant departmental affiliation. Check all that apply.`,
          occupation = `Your current occupation at the university`, 
          cs_course_count = `How many computer science courses (undergrad or grad) have you taken?`, 
@@ -91,7 +91,7 @@ wrangle <- wrangle %>%
 
 viz <- viz %>% 
   rename(survey_time = Timestamp, 
-         identifier = `Please enter a unique identifier as follows: Number of pets (as numeric) + First two letters of your last name (lowercase) + First three letters of your current street (lowercase).  (e.g. I have no pets, my last name is Theobold, and I live on Beall Street, my unique identifier would be 0thbea)`,
+         identifier = ID,
          department = `Please indicate your relevant departmental affiliation. Check all that apply.`,
          occupation = `Your current occupation at the university`, 
          cs_course_count = `How many computer science courses (undergrad or grad) have you taken?`, 
@@ -118,10 +118,7 @@ viz <- viz %>%
 ```{r}
 introR <- introR %>% 
   mutate(workshop = "Introduction to R", 
-         survey_time = ymd( 
-           word(
-             survey_time, 1)
-           ), 
+         survey_time = ymd(survey_time), 
          semester = case_when(
            year(survey_time) == 2019 & 
              month(survey_time) %in% c(1, 2, 3, 4) ~  "spring 2019",
@@ -133,10 +130,7 @@ introR <- introR %>%
 
 intermedR <- intermedR %>% 
   mutate(workshop = "Intermediate R", 
-         survey_time = ymd( 
-           word(
-             survey_time, 1)
-           ), 
+         survey_time = ymd(survey_time), 
          semester = case_when(
            year(survey_time) == 2019 & 
              month(survey_time) %in% c(1, 2, 3, 4) ~  "spring 2019",
@@ -148,10 +142,7 @@ intermedR <- intermedR %>%
 
 wrangle <- wrangle %>% 
   mutate(workshop = "Data Wrangling in R", 
-         survey_time = ymd( 
-           word(
-             survey_time, 1)
-           ), 
+         survey_time = ymd(survey_time), 
          semester = case_when(
            year(survey_time) == 2019 & 
              month(survey_time) %in% c(1, 2, 3, 4) ~  "spring 2019",
@@ -162,10 +153,7 @@ wrangle <- wrangle %>%
 
 viz <- viz %>% 
   mutate(workshop = "Data Visualization in R", 
-         survey_time = ymd( 
-           word(
-             survey_time, 1)
-           ), 
+         survey_time = ymd(survey_time),
          semester = case_when(
            year(survey_time) == 2019 & 
              month(survey_time) %in% c(1, 2, 3, 4) ~  "spring 2019",

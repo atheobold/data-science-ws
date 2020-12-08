@@ -12,17 +12,13 @@ library(lubridate)
 # Data
 
 ```{r}
-introR <- read_xlsx("introR_assessment_raw.xlsx", 
-                    sheet = 1)
+introR <- read_csv("introR_assessment_raw.csv") 
 
-intermedR <- read_xlsx("intermediateR_assessment_raw.xlsx", 
-                       sheet = 1)
+intermedR <- read_csv("intermediateR_assessment_raw.csv")
 
-wrangle <- read_xlsx("wrangle_assessment_raw.xlsx", 
-                     sheet = 1)
+wrangle <- read_csv("wrangle_assessment_raw.csv")
 
-viz <- read_xlsx("viz_assessment_raw.xlsx", 
-                 sheet = 1)
+viz <- read_csv("viz_assessment_raw.csv")
 
 ```
 
@@ -33,7 +29,7 @@ viz <- read_xlsx("viz_assessment_raw.xlsx",
 
 introR <- introR %>% 
   rename(survey_time = Timestamp, 
-         identifier = `Please enter a unique identifier as follows: Number of pets (as numeric) + First two letters of your last name (lowercase) + First three letters of your current street (lowercase).  (e.g. I have no pets, my last name is Theobold, and I live on Beall Street, my unique identifier would be 0thbea)`,
+         identifier = ID,
          pace = `How did you perceive the pace of the workshop?`, 
          balance = `How was the balance of lecture to hands-on work?`,
          instructor_answers = `The Instructor gave clear answers to your questions.`, 
@@ -55,7 +51,7 @@ introR <- introR %>%
 
 intermedR <- intermedR %>% 
   rename(survey_time = Timestamp, 
-         identifier = `Please enter a unique identifier as follows: Number of pets (as numeric) + First two letters of your last name (lowercase) + First three letters of your current street (lowercase).  (e.g. I have no pets, my last name is Theobold, and I live on Beall Street, my unique identifier would be 0thbea)`,
+         identifier = ID,
          pace = `How did you perceive the pace of the workshop?`, 
          balance = `How was the balance of lecture to hands-on work?`,
          instructor_answers = `The Instructor gave clear answers to your questions.`, 
@@ -77,7 +73,7 @@ intermedR <- intermedR %>%
 
 wrangle <- wrangle %>% 
   rename(survey_time = Timestamp, 
-         identifier = `Please enter a unique identifier as follows: Number of pets (as numeric) + First two letters of your last name (lowercase) + First three letters of your current street (lowercase).  (e.g. I have no pets, my last name is Theobold, and I live on Beall Street, my unique identifier would be 0thbea)`,
+         identifier = ID,
          pace = `How did you perceive the pace of the workshop?`, 
          balance = `How was the balance of lecture to hands-on work?`,
          instructor_answers = `The Instructor gave clear answers to your questions.`, 
@@ -99,7 +95,7 @@ wrangle <- wrangle %>%
 
 viz <- viz %>% 
   rename(survey_time = Timestamp, 
-         identifier = `Please enter a unique identifier as follows: Number of pets (as numeric) + First two letters of your last name (lowercase) + First three letters of your current street (lowercase).  (e.g. I have no pets, my last name is Theobold, and I live on Beall Street, my unique identifier would be 0thbea)`,
+         identifier = ID,
          pace = `How did you perceive the pace of the workshop?`, 
          balance = `How was the balance of lecture to hands-on work?`,
          instructor_answers = `The Instructor gave clear answers to your questions.`, 
@@ -127,10 +123,7 @@ viz <- viz %>%
 ```{r}
 introR <- introR %>% 
   mutate(workshop = "Introduction to R", 
-         survey_time = ymd( 
-           word(
-             survey_time, 1)
-           ), 
+         survey_time = ymd(survey_time), 
          semester = case_when(
            year(survey_time) == 2019 & 
              month(survey_time) %in% c(1, 2, 3, 4) ~  "spring 2019",
@@ -142,10 +135,7 @@ introR <- introR %>%
 
 intermedR <- intermedR %>% 
   mutate(workshop = "Intermediate R", 
-         survey_time = ymd( 
-           word(
-             survey_time, 1)
-           ), 
+         survey_time = ymd(survey_time), 
          semester = case_when(
            year(survey_time) == 2019 & 
              month(survey_time) %in% c(1, 2, 3, 4) ~  "spring 2019",
@@ -157,10 +147,7 @@ intermedR <- intermedR %>%
 
 wrangle <- wrangle %>% 
   mutate(workshop = "Data Wrangling in R", 
-         survey_time = ymd( 
-           word(
-             survey_time, 1)
-           ), 
+         survey_time = ymd(survey_time), 
          semester = case_when(
            year(survey_time) == 2019 & 
              month(survey_time) %in% c(1, 2, 3, 4) ~  "spring 2019",
@@ -171,10 +158,7 @@ wrangle <- wrangle %>%
 
 viz <- viz %>% 
   mutate(workshop = "Data Visualization in R", 
-         survey_time = ymd( 
-           word(
-             survey_time, 1)
-           ), 
+         survey_time = ymd(survey_time), 
          semester = case_when(
            year(survey_time) == 2019 & 
              month(survey_time) %in% c(1, 2, 3, 4) ~  "spring 2019",

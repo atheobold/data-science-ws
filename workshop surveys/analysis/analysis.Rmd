@@ -99,8 +99,8 @@ ggsave(plot, file = "final_colors_attendance.png", dpi = 300, width = 12, height
 # Summarizing Programming Languages  
 
 ```{r}
-all_survey %>% 
-  gather(python:SQL, key = "language", value = "familiar") %>% 
+pre_survey %>% 
+  pivot_longer(python:SQL, names_to = "language", values_to = "familiar") %>% 
   filter(familiar == "Yes") %>% 
   count(language) %>% 
   arrange(desc(n))
@@ -111,8 +111,8 @@ all_survey %>%
 # Summarizing Data Storage  
 
 ```{r}
-all_survey %>% 
-  gather(store_excel:store_other, key = "storage method", value = "used") %>% 
+pre_survey %>% 
+  pivot_longer(store_excel:store_other, names_to = "storage method", values_to = "used") %>% 
   filter(used == "Yes") %>% 
   count(`storage method`) %>% 
   arrange(desc(n))
@@ -123,9 +123,9 @@ all_survey %>%
 # Summarizing Data Collection Experiences
 
 ```{r}
-all_survey %>% 
-  gather(self_collect:no_collect, 
-         key = "collection", value = "participated") %>% 
+pre_survey %>% 
+  pivot_longer(self_collect:no_collect, 
+         names_to = "collection", values_to = "participated") %>% 
   filter(participated == "Yes") %>% 
   count(collection) %>% 
   arrange(desc(n))
@@ -136,9 +136,9 @@ all_survey %>%
 # Summarizing Reasons for Attending  
 
 ```{r}
-all_survey %>% 
-  gather(research_help:professional_develop, 
-         key = "reason", value = "agreed") %>% 
+pre_survey %>% 
+  pivot_longer(research_help:professional_develop, 
+         names_to = "reason", values_to = "agreed") %>% 
   filter(agreed == "Yes") %>% 
   count(reason) %>% 
   arrange(desc(n))
@@ -149,7 +149,7 @@ all_survey %>%
 # Summarizing Resources Used  
 
 ```{r}
-all_survey %>% 
+pre_survey %>% 
   gather(no_resources:internet_resources, 
          key = "resource", value = "used") %>% 
   filter(used == "Yes") %>% 
@@ -157,33 +157,3 @@ all_survey %>%
   arrange(desc(n))
 
 ```
-
-
-# Summarizing Workshop Attendees Who Returned for Additional Workshops 
-
-```{r}
-intro_intermed <- all_ws %>% 
-                    filter(workshop %in% 
-                             c("Introduction to R", "Intermediate R"), 
-                           semester %in% c("f18", "s19"))
-
-
-intro_intermed %>% 
-  filter(!is.na(identifier)) %>%
-  group_by(identifier) %>% 
-  summarize(count = n()) %>% 
-  filter(count > 1)
-
-## 8/63 came back to Intermediate R
-
-
-intro_intermed %>% 
-  filter(is.na(identifier)) %>%
-  group_by(last_name) %>% 
-  summarize(count = n()) %>% 
-  filter(count > 1)
-
-## 3/42 came back to Intermediate R
-
-```
-
