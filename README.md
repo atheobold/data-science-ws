@@ -8,7 +8,7 @@
 
 To cite this article:  
 
-[Link to Article in the *Journal of Stateistics and Data Science Education*](https://www.tandfonline.com/doi/full/10.1080/10691898.2020.1854636)
+[Link to Article in the *Journal of Statistics and Data Science Education*](https://www.tandfonline.com/doi/full/10.1080/10691898.2020.1854636)
 
 # Abstract 
 
